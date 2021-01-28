@@ -1,7 +1,7 @@
 <template>
   <AppHeader
       :isLoggedIn="isLoggedIn"/>
-  <div class="flex w-full">
+  <div class="flex w-screen overflow-x-hidden flex-col">
     <router-view></router-view>
   </div>
   <teleport to="body">
@@ -40,6 +40,7 @@ export default {
 </script>
 
 <style>
+
 
 
 </style>

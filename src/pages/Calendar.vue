@@ -1,6 +1,8 @@
 <template>
   <div class="m-auto">
-    <h1 class="text-4xl text-center my-5">Vue Calendar</h1>
+    <PageName>
+      Calendar
+    </PageName>
     <section class="mx-2 flex justify-between mb-3">
       <h2 class="font-bold">{{currentMonthName}}</h2>
       <h2 class="font-bold">{{currentYear}}</h2>
@@ -24,8 +26,11 @@
 </template>
 
 <script>
+import PageName from "@/components/PageName/PageName";
+
 export default {
   name: "Calendar",
+  components:{PageName},
   data(){
     return{
       currentDate: new Date().getUTCDate(),

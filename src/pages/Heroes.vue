@@ -1,6 +1,8 @@
 <template>
   <div class="m-auto">
-    <h1 class="text-4xl text-center my-5" >Heroes {{heroesCounter}}</h1>
+    <PageName>
+      Heroes {{heroesCounter}}
+    </PageName>
     <ul >
       <li
           v-for="(hero,index) in heroes"
@@ -26,7 +28,10 @@
 
 <script>
 import {ref, onMounted, computed} from 'vue'
+import PageName from "@/components/PageName/PageName";
+
 export default {
+  components:{PageName},
   setup(){
     const newHeroRef = ref("")
     const heroes = ref ([

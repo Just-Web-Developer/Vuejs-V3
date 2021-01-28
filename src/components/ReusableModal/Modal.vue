@@ -11,7 +11,7 @@
             <slot name="title"></slot>
           </h1>
           <main>
-            <slot name="body"></slot>
+            <slot name="main"></slot>
           </main>
 
         </div>

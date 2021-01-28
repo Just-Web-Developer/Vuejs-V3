@@ -1,7 +1,9 @@
 <template>
   <section class="flex w-full">
     <div class="m-auto">
-      <h1 class="text-4xl text-center">Calculator</h1>
+      <PageName>
+        Calculator
+      </PageName>
       <p class="text-3xl text-right mt-10 mb-3 w-40 overflow-x-auto overflow-y-hidden h-12" style="direction: ltr; white-space: nowrap">{{prevNum}}{{selectedOperation}}{{currentNum}}</p>
       <div class=" grid grid-cols-4 gap-1">
         <button @click="pressed('1')" class="p-2 border rounded shadov w-10 h-10">1</button>
@@ -29,10 +31,11 @@
 <script>
 import {ref} from 'vue'
 import useWindowEvent from '@/utilities/composition/useWindowEvent'
-
+import PageName from "@/components/PageName/PageName";
 
 export default {
 name: "Calculator",
+  components:{PageName},
   setup(){
     const operations = ["+", '-', '*', '/']
     const numbers = ["0","1","2","3","4","5","6","7","8","9"]

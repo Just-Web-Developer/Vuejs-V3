@@ -1,7 +1,12 @@
 <template>
+  <div class="m-auto">
+    <PageName>
+      Slider
+    </PageName>
+  </div>
   <div class=" relative flex flex-wrap w-full" :style="'height:' + sliderHeight + 'px'">
     <div
-        class=" w-full absolute"
+        class=" w-screen absolute"
         v-for="(color,index) in sliders"
         :key="color">
       <transition name="slider">
@@ -31,8 +36,11 @@
 </template>
 
 <script>
+import PageName from "@/components/PageName/PageName";
+
 export default {
 name: "Slider Carousel",
+  components:{PageName},
   data(){
     return{
       currentSlide:0,
@@ -65,14 +73,6 @@ name: "Slider Carousel",
 </script>
 
 <style >
-  .fade-enter-active,
-  .fade-leave-active {
-    transition: opacity .5s ease;
-  }
-  .fade-enter-from,
-  .fade-leave-to{
-    opacity: 0;
-  }
   .slider-enter-active,
   .slider-leave-active {
     transition: all 1s ease;

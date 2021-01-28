@@ -1,6 +1,8 @@
 <template>
   <div class="flex flex-col w-full">
-    <h1 class="text-4xl text-center my-5">Vue Markdown</h1>
+    <PageName>
+      Vue Markdown
+    </PageName>
     <section class="flex w-10/12 m-auto h-screen">
       <article class="w-1/2 border">
         <textarea :value="text" @input="update" class="w-full h-full" ref="newMarkdownRef"></textarea>
@@ -13,8 +15,11 @@
 <script>
 import marked from 'marked'
 import useDebounce from "@/utilities/composition/useDebounce";
+import PageName from "@/components/PageName/PageName";
+
 export default {
 name: "Markdown",
+  components:{PageName},
   data(){
     return{
       text:'',

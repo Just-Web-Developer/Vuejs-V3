@@ -1,6 +1,7 @@
 <template>
   <section class="flex w-full">
     <div class="m-auto">
+      <PageName>User Crud</PageName>
       <Create @new-user-added="addUser"/>
       <table>
         <thead>
@@ -37,10 +38,11 @@
 import {onMounted,reactive} from 'vue'
 import axios from '../plugins/axios'
 import Create from "@/components/UserCrud/Create";
+import PageName from "@/components/PageName/PageName";
 
 export default {
 name: "userCrud",
-  components:{Create},
+  components:{Create, PageName},
   setup(){
   const state = reactive({
     users:[],

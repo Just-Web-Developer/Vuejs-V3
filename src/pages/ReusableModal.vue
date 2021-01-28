@@ -1,7 +1,9 @@
 <template>
   <section class="flex flex-col w-full">
     <div class="m-auto">
-      <h1 class="text-2xl my-5">Re-usable Modal</h1>
+      <PageName>
+        Re-usable Modal
+      </PageName>
       <Modal v-if="isRedModalOpen" @close-modal="isRedModalOpen = false">
         <template v-slot:title>
           Red modal
@@ -30,12 +32,13 @@
 </template>
 
 <script>
-import Modal from '@/components/ReusableModal/Modal'
+import Modal from '@/components/ReusableModal/Modal';
+import PageName from "@/components/PageName/PageName";
 import {ref} from 'vue'
 
 export default {
 name: "ReusableModal",
-  components: {Modal},
+  components: {Modal, PageName},
   setup(){
     const isRedModalOpen = ref(false)
     const isBlueModalOpen = ref(false)

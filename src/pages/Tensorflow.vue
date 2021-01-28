@@ -2,7 +2,9 @@
   <section class="flex w-full">
     <div class="m-auto">
       <div class="mt-10">
-        <h1 class="text-2xl my-4">Tensorflow Object Detection</h1>
+        <PageName>
+          Tensorflow Object Detection
+        </PageName>
         <div class="flex items-center flex-col">
           <div class="flex items-center flex-col my-2">
             <button v-if="!isStreaming" class="border bg-gray-200 my-5 px-2 py-1 rounded" @click="openCamera">Open Camera</button>
@@ -32,6 +34,7 @@
 
 <script>
 import { ref} from "vue";
+import PageName from "@/components/PageName/PageName";
 
 require('@tensorflow/tfjs-backend-cpu');
 require('@tensorflow/tfjs-backend-webgl');
@@ -39,6 +42,7 @@ const cocoSsd = require('@tensorflow-models/coco-ssd');
 
 export default {
   name: "Tenserflow",
+  components:{PageName},
   setup(){
     const imgRef = ref('')
     const videoRef = ref('')

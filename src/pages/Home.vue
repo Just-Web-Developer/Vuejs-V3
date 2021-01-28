@@ -1,13 +1,19 @@
 <template>
   <div class="m-auto">
-    <h1 class="text-4xl text-center my-5">Home</h1>
-
+    <PageName>
+      Home
+    </PageName>
   </div>
+
 </template>
 
 <script>
+import PageName from '@/components/PageName/PageName'
+
 export default {
-  name: "Home"}
+  name: "Home",
+  components: {PageName}
+}
 </script>
 
 <style lang="scss" scoped>
