@@ -3,9 +3,9 @@
     <div v-show="navShow" class="fixed z-30 w-screen h-screen bg-gray-200 opacity-40"></div>
 
       <transition name="navbar" >
-        <nav v-if="navShow"
-             class="bg-gradient-to-r from-blue-800 to-blue-600 fixed right-0 h-screen  px-4 py-14 flex flex-col items-center z-40 justify-start">
-          <ul>
+        <nav v-if="navShow ||  getWindowWidth() > 1024"
+             class="bg-gradient-to-r from-blue-800 to-blue-600 fixed right-0 h-screen  px-4 py-14 flex flex-col items-center z-40 justify-start lg:static lg:h-auto lg:py-0">
+          <ul class="flex flex-col lg:flex-row w-full">
             <li v-for="item in list"
                 :key="item"
                 class="text-white text-2xl mx-3 my-2 text-center"
@@ -15,13 +15,14 @@
                   {{ item.title }}
                 </router-link>
             </li>
+            <li class="text-white text-2xl mx-3 my-2 text-center">
+              <button v-if="!isLoggedIn"  @click="openLogin()">Login</button>
+              <button v-else class="text-white text-2xl mx-3" @click="logout">Logout</button>
+            </li>
           </ul>
-
-          <button v-if="!isLoggedIn" class="text-white text-2xl mx-3" @click="openLogin()">Login</button>
-          <button v-else class="text-white text-2xl mx-3" @click="logout">Logout</button>
         </nav>
       </transition>
-    <div  class="fixed right-4 top-5 z-50 nav-but" @click="navShow = !navShow" :class="navShow ? 'active' : ''">
+    <div  class="fixed right-4 top-5 z-50 nav-but lg:hidden" @click="navShow = !navShow" :class="navShow ? 'active' : ''">
       <div class="line1"></div>
       <div class="line2"></div>
       <div class="line3"></div>
@@ -63,6 +64,10 @@ export default {
     },
     openLogin(){
       this.$store.commit('setLoginModal',true)
+      this.navShow = false
+    },
+    getWindowWidth() {
+      return document.documentElement.clientWidth;
     }
   }
 }

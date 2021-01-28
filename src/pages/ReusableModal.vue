@@ -1,6 +1,6 @@
 <template>
   <section class="flex flex-col w-full">
-    <div class="m-auto">
+    <div class="m-auto flex flex-col">
       <PageName>
         Re-usable Modal
       </PageName>
@@ -9,23 +9,23 @@
           Red modal
         </template>
         <template v-slot:main>
-          <p>Something important...</p>
+          <p>Something important of the red button</p>
         </template>
         <template v-slot:conclusion>
           <section><span>Last words)</span></section>
         </template>
       </Modal>
-      <button @click="isRedModalOpen=true">Open Red Modal</button>
+      <button @click="isRedModalOpen=true" class="border bg-gray-200 rounded my-4 py-2 ">Open Red Modal</button>
       <Modal v-if="isBlueModalOpen" @close-modal="isBlueModalOpen = false">
         <template v-slot:title>
           Blue modal
         </template>
         <template v-slot:main>
-          <p>Something important...</p>
+          <p>Something important of the blue button</p>
         </template>
 
       </Modal>
-      <button @click="isBlueModalOpen=true">Open Blue Modal</button>
+      <button @click="isBlueModalOpen=true" class="border bg-gray-200 rounded my-4 py-2">Open Blue Modal</button>
     </div>
 
   </section>

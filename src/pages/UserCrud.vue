@@ -3,14 +3,14 @@
     <div class="m-auto">
       <PageName>User Crud</PageName>
       <Create @new-user-added="addUser"/>
-      <table>
+      <table >
         <thead>
           <tr>
-            <th>Id</th>
-            <th>Avatar</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Actions</th>
+            <th >Id</th>
+            <th >Avatar</th>
+            <th >Name</th>
+            <th >Email</th>
+            <th >Actions</th>
           </tr>
         </thead>
         <tbody>
@@ -82,5 +82,4 @@ name: "userCrud",
 </script>
 
 <style lang="scss" scoped>
-
 </style>

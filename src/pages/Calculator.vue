@@ -4,24 +4,14 @@
       <PageName>
         Calculator
       </PageName>
-      <p class="text-3xl text-right mt-10 mb-3 w-40 overflow-x-auto overflow-y-hidden h-12" style="direction: ltr; white-space: nowrap">{{prevNum}}{{selectedOperation}}{{currentNum}}</p>
+      <p class="text-3xl text-right mt-10 mb-3 w-56 overflow-x-auto overflow-y-hidden h-12"
+         style="direction: ltr; white-space: nowrap">
+        {{prevNum}}{{selectedOperation}}{{currentNum}}
+      </p>
       <div class=" grid grid-cols-4 gap-1">
-        <button @click="pressed('1')" class="p-2 border rounded shadov w-10 h-10">1</button>
-        <button @click="pressed('2')" class="p-2 border rounded shadov w-10 h-10">2</button>
-        <button @click="pressed('3')" class="p-2 border rounded shadov w-10 h-10">3</button>
-        <button @click="pressed('+')" class="p-2 border rounded shadov w-10 h-10">+</button>
-        <button @click="pressed('4')" class="p-2 border rounded shadov w-10 h-10">4</button>
-        <button @click="pressed('5')" class="p-2 border rounded shadov w-10 h-10">5</button>
-        <button @click="pressed('6')" class="p-2 border rounded shadov w-10 h-10">6</button>
-        <button @click="pressed('-')" class="p-2 border rounded shadov w-10 h-10">-</button>
-        <button @click="pressed('7')" class="p-2 border rounded shadov w-10 h-10">7</button>
-        <button @click="pressed('8')" class="p-2 border rounded shadov w-10 h-10">8</button>
-        <button @click="pressed('9')" class="p-2 border rounded shadov w-10 h-10">9</button>
-        <button @click="pressed('*')" class="p-2 border rounded shadov w-10 h-10">*</button>
-        <button @click="pressed('C')" class="p-2 border rounded shadov w-10 h-10">C</button>
-        <button @click="pressed('0')" class="p-2 border rounded shadov h-10 w-10">0</button>
-        <button @click="pressed('=')" class="p-2 border rounded shadov w-10 h-10">=</button>
-        <button @click="pressed('/')" class="p-2 border rounded shadov w-10 h-10">/</button>
+        <button v-for="elem in elements" :key="elem" @click="pressed(elem)" class="p-3 border rounded shadov w-14 h-14">
+          {{ elem }}
+        </button>
       </div>
     </div>
   </section>
@@ -42,6 +32,7 @@ name: "Calculator",
     const currentNum = ref('')
     const prevNum = ref('')
     const selectedOperation = ref('')
+    const elements = ["1","2","3","+","4","5","6",'-',"7","8","9",'*','C','0','=','/']
 
     function pressed(value){
       if (value === '=' || value === 'Enter') calculate()
@@ -99,7 +90,7 @@ name: "Calculator",
 
 
 
-    return {pressed,currentNum,prevNum,selectedOperation, numbers}
+    return {pressed,currentNum,prevNum,selectedOperation, numbers,elements}
   }
 }
 </script>

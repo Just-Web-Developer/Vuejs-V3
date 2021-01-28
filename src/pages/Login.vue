@@ -1,12 +1,12 @@
 <template>
   <div v-if="isLoginOpen">
     <section
-        class=" z-20 h-screen w-screen bg-gray-500 fixed top-0 opacity-50"
+        class=" z-50 h-screen w-screen bg-gray-500 fixed top-0 opacity-50"
         @click="close">
     </section>
     <div class="absolute inset-0">
       <div class="flex h-full">
-        <div class="z-30 m-auto bg-white p-2 rounded shadow-2xl w-1/3 ">
+        <div class="z-50 m-auto bg-white p-2 rounded shadow-2xl modal lg:w-1/2">
           <div class="p-2 border">
             <h1 class="text-3xl text-center">Login</h1>
             <GoogleLogin @close-login-from-google="close()"/>

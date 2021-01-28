@@ -1,5 +1,5 @@
 <template>
-  <div class="m-auto">
+  <div class="m-auto px-4">
     <PageName>
       Calendar
     </PageName>

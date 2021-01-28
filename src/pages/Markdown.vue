@@ -3,11 +3,11 @@
     <PageName>
       Vue Markdown
     </PageName>
-    <section class="flex w-10/12 m-auto h-screen">
-      <article class="w-1/2 border">
-        <textarea :value="text" @input="update" class="w-full h-full" ref="newMarkdownRef"></textarea>
+    <section class="flex w-10/12 m-auto pb-1.5 flex-col lg:flex-row">
+      <article class="w-full border mb-10 lg:w-1/2 lg:mb-0">
+        <textarea :value="text" @input="update" class="w-full h-52 lg:h-full" ref="newMarkdownRef"></textarea>
       </article>
-      <article class="w-1/2 border bg-gray-100" v-html="markedText"></article>
+      <article class="w-full border bg-gray-100 min-h-52 h-auto break-words lg:w-1/2" v-html="markedText"></article>
     </section>
   </div>
 </template>
@@ -46,5 +46,7 @@ name: "Markdown",
 </script>
 
 <style lang="scss" scoped>
-
+  .min-h-52{
+    min-height: 13rem;
+  }
 </style>
